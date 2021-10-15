@@ -1,0 +1,24 @@
+<div>
+    <div>
+        <app-header (toggleMenuEvent)="snav.toggle()"></app-header>
+    </div>
+    <div>
+        <mat-sidenav-container class="container" >
+            <mat-sidenav #snav [mode]="'side'" [opened]="true" color="primary">
+                <mat-nav-list>
+                    <!-- <a>   <button mat-button>
+                        Dashboard
+                    </button></a> -->
+                    <a mat-list-item routerLink="dashboard">Dashboard</a>
+                    <a mat-list-item routerLink="gate">Gate Camera</a>
+                    <a mat-list-item routerLink="premise">Premises Camera</a>
+                    <a mat-list-item routerLink="report"> Report</a>
+                </mat-nav-list>
+            </mat-sidenav>
+
+            <mat-sidenav-content style="padding: 20px;">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

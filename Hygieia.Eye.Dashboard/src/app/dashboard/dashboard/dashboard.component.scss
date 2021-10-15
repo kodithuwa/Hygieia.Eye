@@ -1,0 +1,23 @@
+.example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+}
+.count {
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+    }
+    display: grid;
+    place-content: center;
+}
+.card-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.mat-card-container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
