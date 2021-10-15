@@ -1,0 +1,126 @@
+<div>
+    <div style="display: flex;">
+        <h1>Today Summary</h1>
+        <h4 style="display: grid;place-content: center;">&nbsp;&nbsp;(2021-10-09)</h4>
+    </div>
+    <div class="card-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Rejected</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-card-container">
+                <div>
+                    <img src="assets/images/rejected.png" style="width: 80px;" alt="" srcset="">
+                </div>
+                <div class="count">
+                    <h1>
+                        400
+                    </h1>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Total Visited</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-card-container">
+                <div>
+                    <img src="assets/images/approve.png" style="width: 80px;" alt="" srcset="">
+                </div>
+                <div class="count">
+                    <h1>
+                        23,543
+                    </h1>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>On Board</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mat-card-container">
+                <div>
+                    <img src="assets/images/family.png" style="width: 80px;" alt="" srcset="">
+                </div>
+                <div class="count">
+                    <h1>
+                        234
+                    </h1>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div style="margin-top: 40px;">
+    <div style="display: flex;">
+        <h1>Previous History Summary</h1>
+    </div>
+
+    <div style="display: grid;grid-gap: 20px;grid-template-columns: 1fr 1fr;width: calc(100vw - 250px);">
+        <div style="display: block;">
+            <div>
+                <h3>Face Mark</h3>
+            </div>
+            <div style="grid-gap: 20px;display: flex;">
+                <mat-form-field appearance="outline" class="example-form-field">
+                    <mat-label>Start date</mat-label>
+                    <input matInput [matDatepicker]="startdatepickerface">
+                    <mat-datepicker-toggle matSuffix [for]="startdatepickerface"></mat-datepicker-toggle>
+                    <mat-datepicker #startdatepickerface>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="example-form-field">
+                    <mat-label>End date</mat-label>
+                    <input matInput [matDatepicker]="enddatepickerface">
+                    <mat-datepicker-toggle matSuffix [for]="enddatepickerface"></mat-datepicker-toggle>
+                    <mat-datepicker #enddatepickerface>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+            </div>
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </div>
+        <div style="display: block;">
+            <div>
+                <h3>Temperature</h3>
+            </div>
+            <div style="grid-gap: 20px;display: flex;">
+                <mat-form-field appearance="outline" class="example-form-field">
+                    <mat-label>Start date</mat-label>
+                    <input matInput [matDatepicker]="startdatepickertemp">
+                    <mat-datepicker-toggle matSuffix [for]="startdatepickertemp"></mat-datepicker-toggle>
+                    <mat-datepicker #startdatepickertemp>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="example-form-field">
+                    <mat-label>End date</mat-label>
+                    <input matInput [matDatepicker]="enddatepickertemp">
+                    <mat-datepicker-toggle matSuffix [for]="enddatepickertemp"></mat-datepicker-toggle>
+                    <mat-datepicker #enddatepickertemp>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+            </div>
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </div>
+    </div>
+</div>
