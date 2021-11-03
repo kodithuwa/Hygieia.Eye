@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { CountService } from 'src/app/_core/services/api/count.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,12 +24,33 @@ export class DashboardComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Visited' }
   ];
 
-  startDate:string="";
-  endDate:string=""
+  startDate: string = "";
+  endDate: string = "";
 
-  constructor() { }
+  counts: any = {
+    allRejected: 28,
+    onBoard: 98,
+    visited: 18,
+    tempRejected: 20,
+    maskRejected: 8
+  }
+
+  constructor(
+    private countService: CountService
+  ) { }
 
   ngOnInit(): void {
+    // setInterval(() => {
+      this.getCount();
+    // }, 1000)
+  }
+  getCount() {
+    this.countService.getCount()
+      .subscribe(
+        (res) => {
+          this.counts = res;
+        }
+      );
   }
 
 }
