@@ -14,8 +14,10 @@
                 </div>
                 <div class="count">
                     <h1>
-                        400
+                        {{counts.rejected}}
                     </h1>
+                    <h4>Temperature :- {{counts.tempRejected}}</h4>
+                    <h4>Face Mark :- {{counts.maskRejected}}</h4>
                 </div>
             </mat-card-content>
         </mat-card>
@@ -29,7 +31,7 @@
                 </div>
                 <div class="count">
                     <h1>
-                        23,543
+                        {{counts.visited}}
                     </h1>
                 </div>
             </mat-card-content>
@@ -44,11 +46,13 @@
                 </div>
                 <div class="count">
                     <h1>
-                        234
+                        {{counts.onBoard}}
                     </h1>
                 </div>
             </mat-card-content>
         </mat-card>
+        <div>
+        </div>
     </div>
 </div>
 
