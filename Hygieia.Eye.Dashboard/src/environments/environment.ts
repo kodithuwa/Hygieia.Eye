@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api:"localhost:4000"
+  api:"https://hygieiaeye.azurewebsites.net"
 };
 
 /*
