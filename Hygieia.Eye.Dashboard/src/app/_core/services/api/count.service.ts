@@ -12,6 +12,6 @@ export class CountService {
   ) { }
 
   getCount(){
-    return this.http.get(`${environment.api}/count`)
+    return this.http.get(`${environment.api}/dashboard/getcrowd`)
   }
 }
